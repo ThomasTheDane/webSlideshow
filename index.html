@@ -1,1 +1,177 @@
-<h1>hi</h1>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+<style>
+.websiteFrame{
+	width: 49%;
+	height: 99%;
+}
+
+#iframe2{
+	/*float: right;*/
+}
+
+#websiteInputs{
+	/*float:right;*/
+	width: 50%;
+}
+
+</style>
+
+<script>
+
+	$( document ).ready(function(){
+		var counter = 0
+		var websites = []
+		$("#start").click(function(){
+			
+			
+
+			websites = $("#websiteInputs").val().split("\n");
+			// console.log(websites)
+
+			advanceSites()
+			setInterval(function(){ 
+				advanceSites()
+
+			}, parseInt($("#speed").val()) * 1000 ) ;
+			 // setTimeout(pageScroll);
+			// document.getElementById("iframe1").contentWindow.scrollBy(0,20);
+		});
+		function advanceSites() {
+			document.getElementById("iframe1").src=websites[counter];
+			counter = counter + 1;
+			if(counter == websites.length){
+				counter = 0;
+			}		
+
+			document.getElementById("iframe2").src=websites[counter];
+			counter = counter + 1;
+			if(counter == websites.length){
+				counter = 0;
+			}		
+			
+		}
+	})
+</script>
+
+<h1> Slideshow! </h1>
+<textarea id="websiteInputs">
+http://business.google.com/website/dzacky-ice-cream
+http://business.google.com/website/gyas-pancing
+http://business.google.com/website/everest-tuitions-home-tuitions
+http://business.google.com/website/govardhan-estates
+http://business.google.com/website/toko-elsi
+http://business.google.com/website/shree-padma-technology
+http://business.google.com/website/aneka-plastik-4-dahlia
+http://business.google.com/website/cine-litho-press
+http://business.google.com/website/kedai-sop-zamrud
+http://business.google.com/website/studio-jagdamba-movies
+http://business.google.com/website/escolaativapequenoprincipe
+http://business.google.com/website/adhinda-kids-baby-childrens-clothing-store
+http://business.google.com/website/digiprints
+http://business.google.com/website/waves-recording-studio
+http://business.google.com/website/sri-laxmi-narasimha-cable-tv-net-work
+http://business.google.com/website/subur-ksb-cell
+http://business.google.com/website/b-88-clothes
+http://business.google.com/website/ksb-arloji
+http://business.google.com/website/qrana-collection
+http://business.google.com/website/itrc-computer-institute
+http://business.google.com/website/indah-salon
+http://business.google.com/website/sate-solo-sopo-nyono
+http://business.google.com/website/sharmabakery-bakery
+http://business.google.com/website/website-2
+http://business.google.com/website/kurnia-gordyn
+http://business.google.com/website/powerstar
+http://business.google.com/website/b88clothes
+http://business.google.com/website/toysma-pijat
+http://business.google.com/website/sinar-baru
+http://business.google.com/website/cendana-indah-cell
+http://business.google.com/website/indah-foto
+http://business.google.com/website/karismamilkshop3
+http://business.google.com/website/amma-daddy-computer-education-institute
+http://business.google.com/website/b88-clothes
+http://business.google.com/website/shiv-neelsh-coaching-centre
+http://business.google.com/website/bharathi-degree-college
+http://business.google.com/website/uza-cellular
+http://business.google.com/website/rm-kasih-bunda
+http://business.google.com/website/bintang-media-foto-copy
+http://business.google.com/website/laxmi-opticals
+http://business.google.com/website/berkah-laundry
+http://business.google.com/website/niram-offset-printers
+http://business.google.com/website/berker-slipper
+http://business.google.com/website/chinesefood12
+http://business.google.com/website/adhinda-kids-baby
+http://business.google.com/website/adhindakidsbaby
+http://business.google.com/website/putri-ayu
+http://business.google.com/website/zpa-collection
+http://business.google.com/website/eriel-phone
+http://business.google.com/website/fairuz-hijab
+http://business.google.com/website/tajur-bags
+http://business.google.com/website/sinar-baru-optik
+http://business.google.com/website/yan-motor
+http://business.google.com/website/health-care-medicals
+http://business.google.com/website/the-hotel-ruchies-restaurant
+http://business.google.com/website/bk-raju-arts-flex
+http://business.google.com/website/rs-trading-co
+http://business.google.com/website/bakmie-anita
+http://business.google.com/website/bhisya-church
+http://business.google.com/website/sumber-motor
+http://business.google.com/website/boimnet4
+http://business.google.com/website/hotel-raddision-bina-kurwai-road
+http://business.google.com/website/smartenglishspeakingcenter
+http://business.google.com/website/visri-consultants
+http://business.google.com/website/mieayam561
+http://business.google.com/website/ratnam-central-school
+http://business.google.com/website/shree-sai-computer
+http://business.google.com/website/aldo-cellular
+http://business.google.com/website/jotika-english-and-education-center
+http://business.google.com/website/i-roc
+http://business.google.com/website/saanvi-honda
+http://business.google.com/website/ubi-bakar-ubi-cilembu-khas-bandung
+http://business.google.com/website/preferred-7-technologies
+http://business.google.com/website/j-k-food-industries
+http://business.google.com/website/mustika-gordyn
+http://business.google.com/website/sinar-asih
+http://business.google.com/website/utama-jaya
+http://business.google.com/website/sneham-digital-studio
+http://business.google.com/website/chiraginfotech
+http://business.google.com/website/ludra-offset-printing-press
+http://business.google.com/website/lkp-gita-pertiwi
+http://business.google.com/website/eko-sport
+http://business.google.com/website/gandhi-enterprises
+http://business.google.com/website/silpa-digital-studio
+http://business.google.com/website/candra-motor
+http://business.google.com/website/revathy-computers
+http://business.google.com/website/arcanum-electronix-pvt-ltd
+http://business.google.com/website/sinar-mandiri-electronic
+http://business.google.com/website/harapan-baru-motor
+http://business.google.com/website/pondok-ibu-ega
+http://business.google.com/website/sangeet-photography
+http://business.google.com/website/sri-lakshmi-venkateswara-net-cafe-xerox
+http://business.google.com/website/bengkel-sepatu-aldie
+http://business.google.com/website/vaibava-digital-printers
+http://business.google.com/website/thirumalai-offset-printers
+http://business.google.com/website/bishnupriya-studio
+http://business.google.com/website/project-upper-primary-school-barapalli
+http://business.google.com/website/primary-school-bhisya
+http://business.google.com/website/devrishi-public-sr-sec-school
+http://business.google.com/website/pangkas-rambut-anugrah
+http://business.google.com/website/dhamaka-sale
+http://business.google.com/website/surya-jaya-motor
+http://business.google.com/website/sgnp-girls-sr-sec-school-munde
+http://business.google.com/website/lapo-ni-tondongta-pusat-senayan-bsd
+http://business.google.com/website/ajit-automobiles
+http://business.google.com/website/wawa-salon
+</textarea>
+<br>
+<button id="start">start</button>
+<input type="text" id="speed" value="60">
+<br>
+<iframe src="" class="websiteFrame" id="iframe1"></iframe>
+<iframe src="" class="websiteFrame" id="iframe2"></iframe>
+
+
+
+
+
