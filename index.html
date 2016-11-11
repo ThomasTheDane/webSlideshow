@@ -2,6 +2,9 @@
 <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
 
 <style>
+div{
+	/*border: solid black 1px;*/
+}
 .websiteFrame{
 	width: 49%;
 	height: 99%;
@@ -14,6 +17,19 @@
 #websiteInputs{
 	/*float:right;*/
 	width: 50%;
+}
+
+#websiteLabel1{
+	width: 49%;
+}
+
+#websiteLabel2{
+	width: 49%;
+	float:right;
+}
+
+#controls{
+	margin-bottom: 10px;
 }
 
 </style>
@@ -39,8 +55,12 @@
 			// document.getElementById("iframe1").contentWindow.scrollBy(0,20);
 		});
 		function advanceSites() {
-			document.getElementById("iframe1").src=websites[Math.floor(Math.random() * websites.length)];
-			document.getElementById("iframe2").src=websites[Math.floor(Math.random() * websites.length)];
+			var website1 = websites[Math.floor(Math.random() * websites.length)];
+			var website2 = websites[Math.floor(Math.random() * websites.length)];
+			document.getElementById("iframe1").src=website1;
+			document.getElementById("iframe2").src=website2;
+			$("#websiteLabel1").html(website1);
+			$("#websiteLabel2").html(website2);
 			// document.getElementById("iframe1").src=websites[counter];
 			// counter = counter + 1;
 			// if(counter == websites.length){
@@ -58,6 +78,7 @@
 </script>
 
 <h1> Slideshow! </h1>
+<div id="controls">
 <textarea id="websiteInputs">
 http://business.google.com/website/dental-home
 http://business.google.com/website/nasi-soto-ayam-cak-ilham
@@ -40402,10 +40423,16 @@ http://business.google.com/website/mode-boutique
 http://business.google.com/website/sr-traders-co
 http://business.google.com/website/jai-durga-motor-driving-school
 </textarea>
-<br>
+
 <button id="start">start</button>
 <input type="text" id="speed" value="60">
-<br>
+</div>
+<div>
+	<text id="websiteLabel1"></text>
+	<text id="websiteLabel2"></text>
+</div>
+<BR>
+
 <iframe src="" class="websiteFrame" id="iframe1"></iframe>
 <iframe src="" class="websiteFrame" id="iframe2"></iframe>
 
