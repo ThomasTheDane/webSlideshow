@@ -92,6 +92,7 @@ loadSiteNames = () => {
   return new Promise((resolve, reject) => {
     $.ajax({
         url: "/allPrestoSites",
+        cache: false,
         method: "GET",
         success: (data) => {
           siteNames = data.split("\n");
