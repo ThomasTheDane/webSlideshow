@@ -12,7 +12,8 @@ loadSiteNames = () => {
           resolve(siteNames);
         },
         error: (xhr) => {
-          console.log("failed to get data")
+          document.getElementById("frameLabel1").textContent = "Failed to get list of sites.";
+          console.log("failed to get data");
           reject();
         },
       });
