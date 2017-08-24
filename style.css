@@ -10,6 +10,10 @@
   flex-grow: 1;
 }
 
+.siteContainer:first-of-type {
+  border-right: 2px solid #e6e6e6;
+}
+
 .frameLabel {
   color: #333;
   font-family: 'Lato', sans-serif;
