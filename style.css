@@ -1,0 +1,22 @@
+.sites {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.siteContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.frameLabel {
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  padding: 8px 0px;
+  text-align: center;
+}
+
+.websiteFrame {
+  height: 100%;
+}

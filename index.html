@@ -1,158 +1,19 @@
+<head>
+<script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script type="text/javascript" src="siteLoader.js"></script>
+</head>
+<body>
 
-<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
-  <style>
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-  </style>
-
-<style>
-div{
-	/*border: solid black 1px;*/
-}
-.websiteFrame{
-	width: 49%;
-	height: 99%;
-}
-
-#iframe2{
-	/*float: right;*/
-}
-
-#websiteInputs{
-	/*float:right;*/
-	width: 50%;
-}
-
-#websiteLabel1{
-	width: 49%;
-}
-
-#websiteLabel2{
-	width: 49%;
-	float:right;
-}
-
-#controls{
-	margin-bottom: 10px;
-}
-
-</style>
-
-<script>
-const URL_PREFIX = "https://business.google.com/website/";
-const SLEEP_TIME_MS = 60000; // 1 minute.
-
-loadSiteNames = () => {
-  return new Promise((resolve, reject) => {
-    $.ajax({
-        url: "/allPrestoSites",
-        cache: false,
-        method: "GET",
-        success: (data) => {
-          siteNames = data.split("\n");
-          resolve(siteNames);
-        },
-        error: (xhr) => {
-          console.log("failed to get data")
-          reject();
-        },
-      });
-  });
-};
-
-getUrlsFromNames = (siteNames) => {
-  return siteNames.map((name) => {
-    return URL_PREFIX + name;
-  });
-};
-
-showSiteLoop = (urls) => {
-  const leftFrame = document.getElementById("iframe1");
-  const rightFrame = document.getElementById("iframe2");
-  let currentIndex = 0;
-
-  showSites = () => {
-    const leftUrl = urls[currentIndex];
-    currentIndex++;
-    const rightUrl = urls[currentIndex];
-    currentIndex++;
-
-    leftFrame.src = leftUrl;
-    rightFrame.src = rightUrl;
-
-    if (currentIndex == urls.length-1) {
-      currentIndex = 0;
-    }
-  }
-
-  // Loop to show sites continuously.
-  setInterval(() => {
-    showSites()
-  }, SLEEP_TIME_MS);
-
-  // Show two sites immediately.
-  showSites();
-}
-
-$(document).ready(() => {
-  loadSiteNames().then((siteNames) => {
-    const siteUrls = getUrlsFromNames(siteNames);
-    showSiteLoop(siteUrls);
-  });
-});
-
-</script>
-
-<iframe src="" class="websiteFrame" id="iframe1"></iframe>
-<iframe src="" class="websiteFrame" id="iframe2"></iframe>
-
-
-
-
-
+<div class="sites">
+  <div class="siteContainer">
+    <span class="frameLabel" id="frameLabel1"></span>
+    <iframe class="websiteFrame" id="iframe1"></iframe>
+  </div>
+  <div class="siteContainer">
+    <span class="frameLabel" id="frameLabel2"></span>
+    <iframe class="websiteFrame" id="iframe2"></iframe>
+  </div>
+</div>
