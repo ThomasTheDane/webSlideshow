@@ -4,7 +4,7 @@ const SLEEP_TIME_MS = 60000; // 1 minute.
 loadSiteNames = () => {
   return new Promise((resolve, reject) => {
     $.ajax({
-        url: "/allPrestoSites",
+        url: "allPrestoSites",
         cache: false,
         method: "GET",
         success: (data) => {
@@ -13,6 +13,7 @@ loadSiteNames = () => {
         },
         error: (xhr) => {
           document.getElementById("frameLabel1").textContent = "Failed to get list of sites.";
+          alert("Failed to get list of sites.");
           console.log("failed to get data");
           reject();
         },
