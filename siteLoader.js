@@ -1,6 +1,21 @@
 const URL_PREFIX = "https://business.google.com/website/";
 const SLEEP_TIME_MS = 60000; // 1 minute.
 
+/**
+ * Randomize array element order in-place.
+ * Using Durstenfeld shuffle algorithm.
+ * Source: https://stackoverflow.com/a/12646864
+ */
+shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+  return array;
+}
+
 loadSiteNames = () => {
   return new Promise((resolve, reject) => {
     $.ajax({
@@ -8,7 +23,8 @@ loadSiteNames = () => {
         cache: false,
         method: "GET",
         success: (data) => {
-          siteNames = data.split("\n");
+          let siteNames = data.split("\n");
+          siteNames = shuffleArray(siteNames)
           resolve(siteNames);
         },
         error: (xhr) => {
