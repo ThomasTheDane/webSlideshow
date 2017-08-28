@@ -60,9 +60,17 @@ showSiteLoop = (urls) => {
   showSites();
 }
 
+setUpRefreshButton = () => {
+  const refreshButton = $(".refreshButton").click(() => {
+    location.reload();
+  });
+
+}
+
 $(document).ready(() => {
   loadSiteNames().then((siteNames) => {
     const siteUrls = getUrlsFromNames(siteNames);
     showSiteLoop(siteUrls);
   });
+  setUpRefreshButton();
 });

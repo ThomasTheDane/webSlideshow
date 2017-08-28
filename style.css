@@ -24,3 +24,10 @@
 .websiteFrame {
   height: 100%;
 }
+
+.refreshButton {
+  opacity: 0.6;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
